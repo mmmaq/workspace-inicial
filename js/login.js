@@ -5,7 +5,9 @@ function login() {
     if (usuario==='' || clave===''){
         alert('Debe ingresar usuario y clave');
     }else{
+        localStorage.setItem("user",usuario);
         location.href='index.html';
+
     }
 }
 
