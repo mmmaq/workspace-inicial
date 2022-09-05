@@ -42,3 +42,22 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  let usuario = localStorage.getItem('user');
+
+    if (usuario != null) {
+        document.getElementById('ponerUsuario').innerHTML = usuario;
+        document.getElementById('iniciarSesion').innerHTML = "Cerrar Sesión";
+
+    }
+
+    document.getElementById('iniciarSesion').addEventListener("click", function(){
+        localStorage.removeItem('user');
+        
+    })
+
+
+
+});
