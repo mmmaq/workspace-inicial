@@ -31,7 +31,7 @@ function showAutosList(array){
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(AUTOS).then(function(resultObj){
+    getJSONData(PRODUCTS_URL + traerId + EXT_TYPE).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             autosArray = resultObj.data.products;
