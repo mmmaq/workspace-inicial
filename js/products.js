@@ -34,6 +34,11 @@ function sortProducts(criteria, array){
     return result;
 }
 
+function setProdID(id) {
+    localStorage.setItem("products", id);
+    window.location = "product-info.html"
+}
+
 let productsArray = [];
 
 function showProductsList(){
@@ -47,7 +52,7 @@ function showProductsList(){
 
 
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <div onclick="setProdID(${products.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src= "`+ products.image + `" alt="product image" class="img-thumbnail">
@@ -88,7 +93,7 @@ function sortAndShowProducts(sortCriteria, productsArray){
 
 document.addEventListener("DOMContentLoaded", function(e){
     
-    getJSONData(PRODUCTS_URL + traerId + EXT_TYPE).then(function(resultObj){
+    getJSONData(PRODUCTS_URL + traerIdCats + EXT_TYPE).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             currentProductsArray = resultObj.data.products;

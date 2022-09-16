@@ -41,10 +41,38 @@
     </div>
   </nav>
   <main>
+    <div class="text-center p-4">
+      <h2>Información del producto</h2>
+    </div>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div class="list-group" id="product-info-container">
+        </div>
+      </div><br><br>
+      <div class="row">
+        <h3 class="fw-bold fs-3">Comentarios</h3><br><br>
+        <div class="list-group" id="comentarios-container">
+        </div>
       </div>
+      <div>
+        <br><br>
+        <h3 class="fw-bold fs-3">Comentar</h3>
+      </div>
+      <form>
+        <label for="opinion" class="fw-semibold fs-4" >Tu opinión:</label>
+        <br>
+        <input type="text" id="opinion" style="WIDTH: 50%; HEIGHT: 150px">
+        <br><br>
+        <label for="puntuacion" class="fw-semibold fs-4">Tu puntuación:</label>
+        <select id="puntuacion" name="estrellas" class="fw-semibold fs-4">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br><br>
+        <input class="btn btn-primary btn-lg d-grid gap-2 d-md-block" type="submit" value="Enviar">
+      </form>
     </div>
   </main>
   <footer class="text-muted">

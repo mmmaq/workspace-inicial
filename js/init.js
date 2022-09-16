@@ -6,9 +6,10 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
-const AUTOS = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+const PRODUCTS = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
-const traerId = localStorage.getItem('catID');
+const traerIdCats = localStorage.getItem('catID');
+const traerIdProduct = localStorage.getItem('products');
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
