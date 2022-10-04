@@ -1,4 +1,5 @@
 let productInfo = {}
+let productoRelacionado = []
 let comentariosArray=[]
 
 function showProductInfo(productInfo){
@@ -10,16 +11,26 @@ function showProductInfo(productInfo){
             <div class="row">
                 `+ cargarImagenes(productInfo.images)+`
                 <div class="col">
-                    <div >
+                    <div>
                         <br>
                         <h4 class="fw-bold fs-1">`+ productInfo.name +`</h4> <br>
                         <p class="fs-4"> Descripcion del producto: `+ " "+ productInfo.description +`</p> 
                         <p class="fs-4"> Moneda:`+ " " + productInfo.currency + `</p> 
                         <p class="fs-4">Precio:`+ " " + productInfo.cost + ` <p> 
                         <p class="fs-4">Cantidad vendidos:` + " " + productInfo.soldCount + ` <p> 
+                        <br><br>
                     </div>
                 </div>
+                <br>
+                <h5 class="fw-bold fs-3">Productos relacionados:</h5>
+                <br>
+                <br>
+                <div class="row w-100 p-3">
+                `+ showProductosRelacionados(productInfo.relatedProducts)+`
+                </div>
             </div>
+            <br>
+            <br>
          `
          document.getElementById("product-info-container").innerHTML = htmlContentToAppend;
     }
@@ -30,7 +41,7 @@ function cargarImagenes(lista){
     for (let foto of lista){
         fotitos+=
        ` <div class="col-3">
-                    <img src= `+ foto + ` class="img-thumbnail">
+                <img src= `+ foto + ` class="img-thumbnail">
         </div>`
 
     } return fotitos
@@ -67,6 +78,24 @@ function puntaje(puntos){
 }
 
 
+function showProductosRelacionados(productoRelacionado){
+        let relatedProduct=""
+        for (let producto of productoRelacionado){
+            relatedProduct+=
+            `
+            <br>
+                <div class="col text-center">
+                    <img src= "`+ producto.image + `" alt="product image" class="img-thumbnail w-50 p-3">
+                    <h4 class="fs-4 fw-bold text-start text-center">`+ producto.name +`</h4>
+                </div>
+           `
+        } return relatedProduct
+    }
+
+   
+
+   
+
 document.addEventListener("DOMContentLoaded", function(e){
     
     getJSONData(PRODUCT_INFO_URL + traerIdProduct + EXT_TYPE).then(function(resultObj){
@@ -81,6 +110,11 @@ document.addEventListener("DOMContentLoaded", function(e){
             comentariosArray= resultObj.data
             mostrarComentarios(comentariosArray)
         }
+    });
+
+    document.getElementById("productosRelacionados").addEventListener("click", function(){
+
+
     });
 
 });

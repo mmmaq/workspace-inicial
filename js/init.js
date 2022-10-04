@@ -50,15 +50,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
     if (usuario != null) {
         document.getElementById('ponerUsuario').innerHTML = usuario;
-        document.getElementById('iniciarSesion').innerHTML = "Cerrar Sesión";
-
+        document.getElementById('iniciarSesion').innerHTML = "";
+    }else{
+      document.getElementById("ponerUsuario").style.display = "none";
     }
 
-    document.getElementById('iniciarSesion').addEventListener("click", function(){
+    document.getElementById("cerrarSesion").addEventListener("click", function(){
         localStorage.removeItem('user');
-        
+        window.location = "login.html"    
     })
 
+    document.getElementById("miCarrito").addEventListener("click", function(){
+      window.location = "cart.html"    
+  })
 
+  document.getElementById("miPerfil").addEventListener("click", function(){
+    window.location = "my-profile.html"    
+})
 
 });
