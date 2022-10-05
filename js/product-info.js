@@ -10,24 +10,24 @@ function showProductInfo(productInfo){
         
             <div class="row">
                 `+ cargarImagenes(productInfo.images)+`
+            <div>
+            <br>
+            <br>
                 <div class="col">
                     <div>
-                        <br>
                         <h4 class="fw-bold fs-1">`+ productInfo.name +`</h4> <br>
                         <p class="fs-4"> Descripcion del producto: `+ " "+ productInfo.description +`</p> 
                         <p class="fs-4"> Moneda:`+ " " + productInfo.currency + `</p> 
                         <p class="fs-4">Precio:`+ " " + productInfo.cost + ` <p> 
                         <p class="fs-4">Cantidad vendidos:` + " " + productInfo.soldCount + ` <p> 
-                        <br><br>
                     </div>
                 </div>
                 <br>
-                <h5 class="fw-bold fs-3">Productos relacionados:</h5>
-                <br>
-                <br>
-                <div class="row w-100 p-3">
+            <div>
+                <h5 class="fw-bolder fs-3">Productos relacionados:</h5>
+            </div>
+            <div class="row w-100 p-3">
                 `+ showProductosRelacionados(productInfo.relatedProducts)+`
-                </div>
             </div>
             <br>
             <br>
@@ -56,7 +56,8 @@ function mostrarComentarios(comentariosArray){
         htmlContentToAppend += `
         <span class="border p-3 mb-2 bg-light text-dark"> 
                 <div class="">
-                    <h4>`+ comment.user + ` ` + comment.dateTime +` ` + puntaje(comment.score)+` </h4> 
+                    <h4 class="fw-bold">`+ comment.user + ` `+ puntaje(comment.score)+` </h4>
+                    <p class="fw-italic"> ` + comment.dateTime +`</p> 
                     <span> </span>
                     <p> `+ comment.description +`</p> 
                 </div>
@@ -85,8 +86,8 @@ function showProductosRelacionados(productoRelacionado){
             `
                 <div onclick="redirigirRelacionado(` + producto.id + `)" class="col position-relative">
                     <img src= "`+ producto.image + `" alt="product image" class="img-thumbnail w-50 p-3">
-                    <h4 class="fs-4 fw-bold text-start">`+ producto.name +`</h4>
-                </div>
+                    <h4 class="fs-4 fw-bold text-start w-50 p-3">`+ producto.name +`</h4>
+                </div><br>
            `
         } return relatedProduct
     }
