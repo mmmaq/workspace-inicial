@@ -83,18 +83,19 @@ function showProductosRelacionados(productoRelacionado){
         for (let producto of productoRelacionado){
             relatedProduct+=
             `
-            <br>
-                <div class="col text-center">
+                <div onclick="redirigirRelacionado(` + producto.id + `)" class="col position-relative">
                     <img src= "`+ producto.image + `" alt="product image" class="img-thumbnail w-50 p-3">
-                    <h4 class="fs-4 fw-bold text-start text-center">`+ producto.name +`</h4>
+                    <h4 class="fs-4 fw-bold text-start">`+ producto.name +`</h4>
                 </div>
            `
         } return relatedProduct
     }
 
-   
+function redirigirRelacionado(id){
+    localStorage.setItem("products", id);
+    document.location.reload();
+}
 
-   
 
 document.addEventListener("DOMContentLoaded", function(e){
     
@@ -112,9 +113,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
-    document.getElementById("productosRelacionados").addEventListener("click", function(){
-
-
-    });
-
 });
+
