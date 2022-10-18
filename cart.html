@@ -51,10 +51,83 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      
+      <section class="h-100">
+        <div class="container h-100 py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10">
+      
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-normal mb-0 text-black fw-bold">Carrito de compras</h3>
+              </div>
+              <br>
+      
+              <div class="card rounded-3 mb-4" id="infoCarrito">
+
+              </div>
+      
+              <div class="card mb-4">
+                <div class="card-body p-4 d-flex flex-row">
+                  <div class="col-md form-floating mb-3">
+                    <input type="text" class="form-control" id="descuento" placeholder="descuento">
+                    <label for="descuento" class="fs-5">Codigo de descuento</label>
+                  </div>
+                  <button type="button" class="btn btn-outline-warning btn-lg ms-3">Aplicar</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <div class="container h-100 py-5">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-10">
+      <h3 class="fw-normal mb-0 text-black fw-bold">Tipo de envio:</h3>
+      <br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="premium" name="tipoEnvio" value="premium">
+        <label class="form-check-label fs-5" for="premium">Premium: 2 a 5 dias (15%)</label><br>
+        <input class="form-check-input" type="radio" id="express" name="tipoEnvio" value="express">
+        <label for="express" class="form-check-label fs-5">Express: 5 a 8 dias (7%)</label><br>
+        <input class="form-check-input" type="radio" id="standard" name="tipoEnvio" value="standard">
+        <label for="standard" class="form-check-label fs-5">Standard: 12 a 15 dias (5%)</label>
+     </div>
+     <br>
+     <br>
+     <h3 class="fw-normal mb-0 text-black fw-bold">Direccion de envio:</h3>
+     <br>
+     
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="calle" placeholder="Portal del Sol">
+      <label for="calle" class="fs-5">Calle:</label>
+    </div>
+    <div class="row g-2">
+    <div class="col-md form-floating mb-3">
+      <input type="text" class="form-control" id="numero" placeholder="70">
+      <label for="numero" class="fs-5">Numero</label>
+    </div>
+    <div class="col-md form-floating mb-3">
+      <input type="text" class="form-control" id="esquina" placeholder="Queguay">
+      <label for="esquina" class="fs-5">Esquina</label>
+    </div>
+    </div>
+     <br>
+     <br>
+
+     <div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-warning btn-block btn-lg">Pagar</button>
       </div>
     </div>
+    <br>
+    <br>
+
+    </div>
+  </div>
+  </div>
+  </div>
   </main>
   <footer class="text-muted">
     <div class="container">

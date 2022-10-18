@@ -10,6 +10,7 @@ const PRODUCTS = "https://japceibal.github.io/emercado-api/cats_products/101.jso
 
 const traerIdCats = localStorage.getItem('catID');
 const traerIdProduct = localStorage.getItem('products');
+const idUsuario = "25801";
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
